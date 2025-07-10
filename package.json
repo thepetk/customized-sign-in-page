@@ -1,0 +1,44 @@
+{
+  "name": "backstage-plugin-rhdh-configurable-signin",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "backstage": {
+    "role": "frontend-plugin"
+  },
+  "dependencies": {
+    "@backstage/core-components": "^0.14.0",
+    "@backstage/core-plugin-api": "^1.9.0",
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.11.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router": "^6.0.0",
+    "react-router-dom": "^6.0.0"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.26.0",
+    "@janus-idp/cli": "^1.7.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1 || ^17.0.0",
+    "react-dom": "^16.13.1 || ^17.0.0",
+    "react-router": "^6.0.0",
+    "react-router-dom": "^6.0.0"
+  },
+  "files": [
+    "dist",
+    "dist-dynamic"
+  ],
+  "scripts": {
+    "build": "backstage-cli package build",
+    "tsc": "tsc",
+    "tsc:full": "tsc && mkdir -p dist-types/src && cp -r dist-types/*.d.ts dist-types/src/ 2>/dev/null || true",
+    "export-dynamic": "janus-cli package export-dynamic-plugin",
+    "build:dynamic": "yarn tsc:full && yarn build && yarn export-dynamic",
+    "clean": "rm -rf dist dist-types"
+  }
+}

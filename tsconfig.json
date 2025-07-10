@@ -1,0 +1,12 @@
+{
+    "extends": "@backstage/cli/config/tsconfig.json",
+    "include": ["src/**/*"],
+    "exclude": ["**/*.test.*", "**/*.stories.*"],
+    "compilerOptions": {
+      "declaration": true,
+      "declarationMap": true,
+      "outDir": "dist-types",
+      "rootDir": ".",
+      "skipLibCheck": true
+    }
+}
