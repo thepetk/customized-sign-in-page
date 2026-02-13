@@ -13,15 +13,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { createPlugin } from '@backstage/core-plugin-api';
-
-/**
- * Plugin for the RHDH customized sign-in page.
- * @public
- */
-export const rhdhCustomizedSignInPagePlugin = createPlugin({
-  id: 'customized-sign-in-page',
-});
-
-export { RHDHCustomizedSignInPage } from './components/RHDHCustomizedSignInPage';
+module.exports = require('@backstage/cli/config/eslint-factory')(__dirname);

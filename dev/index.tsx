@@ -14,14 +14,16 @@
  * limitations under the License.
  */
 
-import { createPlugin } from '@backstage/core-plugin-api';
+import { createElement } from 'react';
+import { createDevApp } from '@backstage/dev-utils';
+import { CustomizedSignInPage } from '../src';
 
-/**
- * Plugin for the RHDH customized sign-in page.
- * @public
- */
-export const rhdhCustomizedSignInPagePlugin = createPlugin({
-  id: 'customized-sign-in-page',
-});
-
-export { RHDHCustomizedSignInPage } from './components/RHDHCustomizedSignInPage';
+createDevApp()
+  .addPage({
+    element: createElement(CustomizedSignInPage, {
+      onSignInSuccess: () => {},
+    }),
+    title: 'Root Page',
+    path: '/customized-sign-in-page',
+  })
+  .render();
