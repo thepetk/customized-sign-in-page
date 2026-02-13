@@ -20,8 +20,8 @@ import { createPlugin } from '@backstage/core-plugin-api';
  * Plugin for the RHDH customized sign-in page.
  * @public
  */
-export const rhdhCustomizedSignInPagePlugin = createPlugin({
+export const CustomizedSignInPagePlugin = createPlugin({
   id: 'customized-sign-in-page',
 });
 
-export { RHDHCustomizedSignInPage } from './components/RHDHCustomizedSignInPage';
+export { CustomizedSignInPage } from './components/CustomizedSignInPage';
